@@ -22,5 +22,6 @@ public class Main {
 
   Employee person1 = new Employee("Simon", "7888", 60000);
   public static void main(String[] args) {
+
   }
 }
