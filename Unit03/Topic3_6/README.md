@@ -1,1 +1,3 @@
-# 2.1 Objects - Instances of Classes
+# 3.6 Equivalent Boolean Expressions
+! flips true and false statements 
+
