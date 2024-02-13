@@ -30,7 +30,7 @@ These exercises are from [CodingBat](https://codingbat.com/java/String-2). Solve
 
    Given a string, return a string where for every char in the original, there are two chars.
 
-````
+```
 
 doubleChar('The') → 'TThhee'
 doubleChar('AAbb') → 'AAAAbbbb'

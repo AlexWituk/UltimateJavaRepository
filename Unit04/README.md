@@ -18,6 +18,9 @@ for loops can be the same as while loops
 
 ## 4.3 - Developing Algorithms Using Strings
 
+Make sure to stay in bounds of string length when searching inside string
+
+
 ## 4.4 - Nested Iteration
 
 ## 4.5 - Informal Code Analysis

@@ -45,23 +45,63 @@ public class StringLoops {
     }
 
     public static String doubleChar(String str) {
-        return "";
+        String result = "";
+        
+        for (int i = 0; i < str.length(); i++) {
+            result += str.substring(i, i+1) + str.substring(i, i+1);
+        }
+        
+        return result;
     }
 
     public static int countCode(String str) {
-        return 0;
+        int count = 0;
+        for (int i = 0; i <= str.length()-4; i++) {
+            if (str.substring(i, i+2).equals("co") && str.substring(i+3, i+4).equals("e")) {
+                count++;
+            }
+        }
+        
+        return count;
     }
 
     public static boolean bobThere(String str) {
-        return false;
+        boolean bobPresent = false;
+        for (int i = 0; i <= str.length()-3; i++)
+        if (str.substring(i, i+1).equals("b") && str.substring(i+2, i+3).equals("b")) {
+            bobPresent = true;
+        }
+
+        return bobPresent;
     }
 
     public static boolean prefixAgain(String str, int n) {
-        return false;
+        boolean pThere = false;
+
+        for (int i = n; i <= str.length()-n; i++) {
+            if (str.substring(0,n).equals(str.substring(i,i+n))) {
+                pThere = true;
+            }
+        }
+
+        return pThere;
     }
 
     public static boolean sameStarChar(String str) {
-        return false;
+        boolean starStar = false;
+
+        for (int i = 0; i < str.length()-1; i++) {
+            if (str.substring(i, i+1).equals("*")) {
+                if (i == 0 || i == str.length()){
+                    starStar = true;
+                }
+                else if (str.substring(i-1, i).equals(str.substring(+1,i+2))){
+                    starStar = true;
+                }
+            }
+        }
+
+        return starStar;
     }
 
     public static String starOut(String str) {
