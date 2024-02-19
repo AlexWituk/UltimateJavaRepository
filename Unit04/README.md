@@ -23,4 +23,10 @@ Make sure to stay in bounds of string length when searching inside string
 
 ## 4.4 - Nested Iteration
 
+Nested loops work like a clock
+
 ## 4.5 - Informal Code Analysis
+
+>for (int i = 0; i < num; i++) {
+    code here will run num times
+}
