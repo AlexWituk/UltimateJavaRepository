@@ -108,16 +108,14 @@ public class StringLoops {
 
     public static String starOut(String str) {
 
-        if (str.equals("*str*in*gy")) {
-            str = "ty";
-        }
-        else {
-            for (int i = 0; i < str.length(); i++) {
+        
+        for (int i = 0; i < str.length(); i++) {
             if (str.substring(i, i+1).equals("*")) {
                 if (i == 0 || i == str.length()-1) {
                     if (i == 0) {
                         if (str.length() > 1) {
                             str = str.substring(i+2, str.length());
+                            i--;
                         }
                         else {
                             str = "";
@@ -129,37 +127,35 @@ public class StringLoops {
                 }
                 else {
                     if (str.length()-i >= 3) {
-                    if (str.substring(i,i+3).equals("***")) {
-                        str = str.substring(0, i-1) + str.substring(i+4, str.length());
+                        if (str.substring(i,i+3).equals("***")) {
+                            str = str.substring(0, i-1) + str.substring(i+4, str.length());
+                        }
+                        else if (str.substring(i,i+2).equals("**")) {
+                            str = str.substring(0, i-1) + str.substring(i+3, str.length());
+                        }
+                        else {
+                            str = str.substring(0, i-1) + str.substring(i+2, str.length());
+                        }
                     }
-                    else if (str.substring(i,i+2).equals("**")) {
-                        str = str.substring(0, i-1) + str.substring(i+3, str.length());
+                    else if (str.length()-i >= 2) {
+                        if (str.substring(i,i+2).equals("**")) {
+                            str = str.substring(0, i-1) + str.substring(i+3, str.length());
+                        }
+                        else {
+                            str = str.substring(0, i-1) + str.substring(i+2, str.length());
+                        }
                     }
-                    else {
+                    else if (str.length()-i >= 1) {
                         str = str.substring(0, i-1) + str.substring(i+2, str.length());
                     }
-                }
-                else if (str.length()-i >= 2) {
-                    if (str.substring(i,i+2).equals("**")) {
-                        str = str.substring(0, i-1) + str.substring(i+3, str.length());
-                    }
                     else {
-                        str = str.substring(0, i-1) + str.substring(i+2, str.length());
+                        str = str.substring(0, i);
                     }
+                    i--;
                 }
-                else if (str.length()-i >= 1) {
-                    str = str.substring(0, i-1) + str.substring(i+2, str.length());
-                }
-                else {
-                    str = str.substring(0, i);
-                }
-
-                }
-                
             }
-
         }
-        }
+        
         
         // have to do something with the i equals after deleting because rn it is skipping stars
         return str;
