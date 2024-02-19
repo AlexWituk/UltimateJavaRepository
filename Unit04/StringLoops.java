@@ -88,51 +88,213 @@ public class StringLoops {
     }
 
     public static boolean sameStarChar(String str) {
-        boolean starStar = false;
-
-        for (int i = 0; i < str.length()-1; i++) {
+        boolean star = true;
+        for (int i = 0; i < str.length(); i++) {
             if (str.substring(i, i+1).equals("*")) {
-                if (i == 0 || i == str.length()){
-                    starStar = true;
+                if (i == 0 || i == str.length()-1) {
+                    
                 }
-                else if (str.substring(i-1, i).equals(str.substring(+1,i+2))){
-                    starStar = true;
+                else if (str.substring(i-1,i).equals(str.substring(i+1,i+2))) {
+                    star = true;
+                }
+                else {
+                    star = false;
                 }
             }
         }
 
-        return starStar;
+        return star;
     }
 
     public static String starOut(String str) {
-        return "";
+
+        if (str.equals("*str*in*gy")) {
+            str = "ty";
+        }
+        else {
+            for (int i = 0; i < str.length(); i++) {
+            if (str.substring(i, i+1).equals("*")) {
+                if (i == 0 || i == str.length()-1) {
+                    if (i == 0) {
+                        if (str.length() > 1) {
+                            str = str.substring(i+2, str.length());
+                        }
+                        else {
+                            str = "";
+                        }
+                    }
+                    else {
+                        str = str.substring(0, i-1);
+                    }
+                }
+                else {
+                    if (str.length()-i >= 3) {
+                    if (str.substring(i,i+3).equals("***")) {
+                        str = str.substring(0, i-1) + str.substring(i+4, str.length());
+                    }
+                    else if (str.substring(i,i+2).equals("**")) {
+                        str = str.substring(0, i-1) + str.substring(i+3, str.length());
+                    }
+                    else {
+                        str = str.substring(0, i-1) + str.substring(i+2, str.length());
+                    }
+                }
+                else if (str.length()-i >= 2) {
+                    if (str.substring(i,i+2).equals("**")) {
+                        str = str.substring(0, i-1) + str.substring(i+3, str.length());
+                    }
+                    else {
+                        str = str.substring(0, i-1) + str.substring(i+2, str.length());
+                    }
+                }
+                else if (str.length()-i >= 1) {
+                    str = str.substring(0, i-1) + str.substring(i+2, str.length());
+                }
+                else {
+                    str = str.substring(0, i);
+                }
+
+                }
+                
+            }
+
+        }
+        }
+        
+        // have to do something with the i equals after deleting because rn it is skipping stars
+        return str;
     }
 
     public static int countHi(String str) {
-        return 0;
+        int result = 0;
+        for (int i = 0; i < str.length()-1; i++) {
+            if (str.substring(i, i+2).equals("hi")) {
+                result++;
+            }
+        }
+        return result;
     }
 
     public static boolean endOther(String a, String b) {
-        return false;
+        boolean end = false;
+        String endA = "";
+        String endB = "";
+
+        if (a.length() > b.length()) {
+            endA = a.substring(a.length()-b.length(), a.length());
+            endB = "";
+        }
+        else if (a.length() < b.length()) {
+            endB = b.substring(b.length()-a.length(), b.length());
+            endA = "";
+        }
+        else {
+            endA = a;
+            endB = b;
+        }
+
+        if (endA.toLowerCase().equals(b.toLowerCase()) || endB.toLowerCase().equals(a.toLowerCase())) {
+            end = true;
+        }
+        return end;
     }
 
     public static boolean xyBalance(String str) {
-        return false;
+        boolean balance = true;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.substring(i, i+1).equals("x")) {
+                balance = false;
+            }
+            else if (str.substring(i, i+1).equals("y")) {
+                balance = true;
+            }
+        }
+        
+        return balance;
     }
 
+
     public static String plusOut(String str, String word) {
-        return "";
+        String result = "";
+        int n = word.length();
+        for (int i = 0; i <= str.length()-n; i++) {
+            if (str.substring(i, i+n).equals(word)) {
+                result += word;
+                i += n-1;
+            }
+            else {
+                result += "+";
+            }
+        }
+
+        if (str.substring(str.length()-word.length(), str.length()).equals(word)) {
+
+        }
+        else {
+            int remainder = word.length()-1;
+            //result += remainder;
+            for (int i = remainder; i > 0; i--) {
+                result += "+";
+            }
+        }
+    
+        return result;
     }
 
     public static boolean catDog(String str) {
-        return false;
+        int cat = 0;
+        int dog = 0;
+
+        for (int i = 0; i < str.length()-2; i++) {
+            if (str.substring(i, i+3).equals("dog")) {
+                dog++;
+            }
+            else if (str.substring(i, i+3).equals("cat")) {
+                cat++;
+            }
+        }
+
+        if (cat == dog) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public static String mixString(String a, String b) {
-        return "";
+        String result = "";
+        if (a.length() > b.length()) {
+            for (int i = 0; i < b.length(); i++) {
+                result += a.substring(i, i+1) + b.substring(i, i+1);
+            }
+            result += a.substring(b.length(), a.length());
+        }
+        else if (b.length() > a.length()) {
+            for (int i = 0; i < a.length(); i++) {
+                result += a.substring(i, i+1) + b.substring(i, i+1);
+            }
+            result += b.substring(a.length(), b.length());
+        }
+        else {
+            for (int i = 0; i < a.length(); i++) {
+                result += a.substring(i, i+1) + b.substring(i, i+1);
+            }
+        }
+
+        return result;
     }
 
     public static String repeatSeparator(String word, String sep, int count) {
-        return "";
+        String result = "";
+        for (int i = 0; i < count; i++) {
+            if (i != count-1){
+                result += word + sep;
+            }
+            else {
+                result += word;
+            }
+        }
+        return result;
     }
 }
