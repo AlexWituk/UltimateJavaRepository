@@ -34,12 +34,36 @@ Comments are ignored by compiler/interpreter - help make code readable
 
 
 ## 5.4 - Accessor Methods
+Accessor Methods: methods that return the value of an instance variable - must be public
+
+Allows for class objects to be printed
+
+>// in class    
+public String toString() {return instance vars as string;}  
+//outside class     
+System.out.println(class object);
+
 
 ## 5.5 - Mutator Methods
+Mutator Methods: change values of instance vars
+
+>public void setName(String n) {name = n;}
 
 ## 5.6 - Writing Methods
+You can use public methods and constructors in other classes
+
+Method header has 5 parts:  
+
+Access level - public or private    
+Ownership - whether `static` is included    
+Return Type - the data returned by method (can be primitve, reference, or void)     
+Identifier - name of method     
+Parameter List - enclosed in parathesis, states data types for each parameter used in method
+
 
 ## 5.7 - Static Variables and Methods
+Static data is not instance data (vars)  
+Static methods are used when accessing static data
 
 ## 5.8 - Scope and Access
 
