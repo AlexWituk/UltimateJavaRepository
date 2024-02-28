@@ -66,7 +66,13 @@ Static data is not instance data (vars)
 Static methods are used when accessing static data
 
 ## 5.8 - Scope and Access
+Don't declare instance vars in constructors
 
 ## 5.9 - `this` Keyword
+`this`  
+- Refers to the object whose method or constructor is being called       
+- Used to make code more readable     
+- Can be passed in parameters
+
 
 ## 5.10 - Ethical and Social Implications of Computing Systems
