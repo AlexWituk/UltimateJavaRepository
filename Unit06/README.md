@@ -31,9 +31,16 @@ for(int i = 0; i < list.length; length++) {
         int[] = (int) Math.random() * 10;       
 }
 
-
-
-
 ## 6.3 - Enhanced for Loop for Arrays
+Goes through every element in array             
+Example:        
+
+>int [] values = {1, 2, 3, 4, 5};        
+for (int num : values) {              
+        System.out.println(number);             
+}
+
+`num` here is a copy of a value from the array
 
 ## 6.4 - Developing Algorithms Using Arrays
+You can find min and max in an array using for loops 
