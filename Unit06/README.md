@@ -28,7 +28,7 @@ For loops are good for this:
 
 > int [] list = new int[5];     
 for(int i = 0; i < list.length; length++) {      
-        int[] = (int) Math.random() * 10;       
+        int[] = (int) (Math.random() * 10);       
 }
 
 ## 6.3 - Enhanced for Loop for Arrays
